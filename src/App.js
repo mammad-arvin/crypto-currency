@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+//pakages
+import { Routes, Route } from "react-router-dom";
+
+//style
+import "./App.css";
+
+//componenets
+import Coins from "./components/Coins";
+import Chart from "./components/Chart.tsx";
+
+//context
+import APIcontext from "./contexts/APIcontext";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    // to show and delete chart of any coin
+    const [chartShow, setChartShow] = useState(true);
+
+    return (
+        <div className="App">
+            <APIcontext>
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <Coins Show={chartShow} setShow={setChartShow} />
+                        }
+                    >
+                        <Route
+                            path=":id"
+                            element={<Chart setShow={setChartShow} />}
+                        />
+                    </Route>
+                </Routes>
+            </APIcontext>
+        </div>
+    );
 }
 
 export default App;

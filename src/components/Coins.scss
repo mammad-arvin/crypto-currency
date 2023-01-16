@@ -1,0 +1,229 @@
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coinsContainer {
+    width: 100vw;
+    header {
+        width: 100%;
+        height: 220px;
+        background: url(../assets/desk-Background.jpg) center/cover no-repeat;
+        h2 {
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            font: 40px FiraCodeMedium;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+            backdrop-filter: blur(3px);
+
+            @media (max-width: 890px) {
+                font-size: 30px;
+            }
+            @media (max-width: 594px) {
+                font-size: 20px;
+                padding-top: 30px;
+                line-height: 55px;
+            }
+        }
+
+        @media (max-width: 481px) {
+            height: 180px;
+            h2 {
+                font-size: 15px;
+            }
+        }
+    }
+    main {
+        background-color: #f2f3f5;
+        min-height: 400px;
+
+        .most {
+            @extend .display;
+            .upPrice {
+                width: 500px;
+                height: 200px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                position: relative;
+                top: -70px;
+                border-radius: 5px;
+                box-shadow: 0 0 5px 0px rgba(142, 136, 136, 0.507);
+                background-color: #fff;
+
+                .contentContainer {
+                    height: 99%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                }
+                .percentage {
+                    width: 134px;
+                    height: 134px;
+                    border-radius: 50%;
+                    color: #3faea4;
+                    font: 600 30px FiraCodeLight;
+                    @extend .display;
+                    background-color: #f2f3f5;
+                }
+            }
+
+            @media (max-width: 770px) {
+                .upPrice {
+                    width: 400px;
+                    height: 170px;
+                }
+                .contentContainer {
+                    h3 {
+                        font-size: 15px;
+                    }
+                    .coinContent {
+                        img {
+                            width: 56px;
+                            height: 56px;
+                        }
+                        p {
+                            font: 600 15px FiraCodeLight;
+                        }
+                    }
+                }
+
+                .upPrice {
+                    .percentage {
+                        width: 110px;
+                        height: 110px;
+                        font-size: 25px;
+                    }
+                }
+            }
+
+            @media (max-width: 481px) {
+                .upPrice {
+                    width: 350px;
+                    height: 140px;
+                }
+            }
+        }
+
+        .contentContainer {
+            h3 {
+                font: 800 20px FiraCodeLight;
+                word-spacing: -4px;
+            }
+            .coinContent {
+                @extend .display;
+                justify-content: flex-start;
+                gap: 15px;
+
+                img {
+                    width: 76px;
+                    height: 76px;
+                }
+                p {
+                    font: 600 17px FiraCodeLight;
+                    span {
+                        color: #a3a5bb;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+        .searchContainer {
+            display: flex;
+            justify-content: center;
+
+            input {
+                width: 300px;
+                height: 40px;
+                font-size: 18px;
+                text-align: center;
+                margin-top: 10px;
+                padding: 5px;
+                border-radius: 5px;
+                outline: none;
+                border: 1px solid rgb(0, 0, 0);
+                background-color: #f2f3f5;
+                &:focus {
+                    border: 2px solid rgb(15, 119, 198);
+                }
+
+                &::placeholder {
+                    color: #050505;
+                    letter-spacing: 1px;
+                }
+                @media (max-width: 428px) {
+                    width: 200px;
+                    height: 30px;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .coinsArtic {
+            width: 95%;
+            margin: 20px auto;
+            .overview {
+                width: 200px;
+                height: 50px;
+                background-color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                box-shadow: 0 -1px 2px 0px rgba(142, 136, 136, 0.341);
+                z-index: 5;
+                position: relative;
+                bottom: 0px;
+            }
+            .coinsList {
+                width: 100%;
+                padding: 15px;
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+                border-bottom-left-radius: 8px;
+                background-color: #fff;
+                box-shadow: 0 0px 4px 0px rgba(142, 136, 136, 0.341);
+                p {
+                    width: 100%;
+                    span {
+                        display: inline-block;
+                        font-size: 14px;
+                        text-align: center;
+                        border-right: 1px solid rgb(186, 186, 186);
+                    }
+                }
+                .coin {
+                    cursor: pointer;
+                    :hover {
+                        transform: scale(1.02) translateY(-6px);
+                        transition: 0.3s;
+                    }
+                }
+            }
+
+            @media (max-width: 720px) {
+                width: 95%;
+
+                .overview {
+                    width: 150px;
+                    height: 35px;
+                    font-size: 14px;
+                }
+
+                .coinsList {
+                    p {
+                        span {
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
