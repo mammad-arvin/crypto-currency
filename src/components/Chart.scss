@@ -1,0 +1,42 @@
+.chartContainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin: 0 auto;
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+    background-color: rgba(47, 47, 31, 0.689);
+    backdrop-filter: blur(3px);
+
+    .chart{
+        width: 500px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgba(118, 237, 255, 0.796);
+        background-color: rgba(242, 251, 226, 0.853);
+    }
+    p{
+        font:  18px FiraCodeMedium;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 3px;
+        background-color: rgba(236, 55, 35, 0.974);
+        cursor: pointer;
+    }
+
+    @media (max-width:570px) {
+        .chart{
+            width: 400px;
+        }
+    }
+    @media (max-width:420px) {
+        .chart{
+            width: 350px;
+        }
+    }
+}
